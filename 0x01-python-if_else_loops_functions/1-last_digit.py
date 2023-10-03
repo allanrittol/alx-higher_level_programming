@@ -6,6 +6,10 @@ number = random.randint(-10000, 10000)
 # This code gets the last digit of the number
 last_digit = abs(number) % 10
 
+# Determine if the last digit is greater than 5, 0, or less than 6 and not 0
+if number < 0:
+    last_digit *= -1  # Correcting the sign for negative numbers
+
 # This section prints the output based on the conditions
 print(f"Last digit of {number} is {last_digit} and", end=" ")
 
