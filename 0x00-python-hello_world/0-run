@@ -1,0 +1,13 @@
+#!/bin/bash
+python3 \$PYFILE
+
+if [[ -z "\$PYFILE" ]]
+then
+  echo "Environment variable PYFILE is not set"
+  exit 1
+elif [[ ! -f "\$PYFILE" ]]
+then
+  echo "File \$PYFILE does not exist"
+  exit 1
+fi
+
