@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-print("".join(chr(x) for x in range(97, 123)), end="")
+print("".join([chr(97 + i) for i in range(26)]))
