@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-print("".join(chr(char) for char in range(ord('a'), ord('z') + 1) if chr(char) not in ['q', 'e']), end="")
+print("".join(chr(c) for c in range(ord('a'), ord('z') + 1) if chr(c) not in 'qe'), end="")
