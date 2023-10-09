@@ -1,4 +1,4 @@
-#/usr/bin/python3
+#!/usr/bin/python3
 def add_tuple(tuple_a=(), tuple_b=()):
     # If the tuple has less than 2 elements, append 0's
     tuple_a += (0, 0)
