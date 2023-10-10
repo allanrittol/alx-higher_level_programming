@@ -3,24 +3,6 @@
 #include <stdio.h>
 
 /**
- * add_nodeint_end - adds new node beginning of listint_t list
- * @head: head of list
- * @n: int to add in list
- * Return: address of new element if successful, if fail NULL
- */
-listint_t *add_nodeint_end(listint_t **head, const int n)
-{
-	listint_t *new;
-
-	new = malloc(sizeof(listint_t));
-	if (new == NULL)
-		return (NULL);
-	new->n = n;
-	new->next = *head;
-	*head = new;
-	return (new);
-}
-/**
 *is_palindrome - identify if a syngle linked list is palindrome
 *@head: head of listint_t
 *Return: 1 if it is palindrome else 0
