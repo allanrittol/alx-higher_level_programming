@@ -9,27 +9,68 @@
 */
 int is_palindrome(listint_t **head)
 {
-	listint_t *head2 = *head;
-	listint_t *aux = NULL, *aux2 = NULL;
+	listint_t *slow, *fast, *prev_slow, *mid_mode;
+	listint_t *second_half, *prev, *next;
+	int is_palindrome = 1;
 
-	if (*head == NULL || head2->next == NULL)
-		return (1);
-	while (head2 != NULL)
+	slow = fast = prev_slow = *head;
+	mid_mode = NULL;
+
+	if (*head != NULL && (*head)->next != NULL)
 	{
-		add_nodeint_end(&aux, head2->n);
-		head2 = head2->next;
-	}
-	aux2 = aux;
-	while (*head != NULL)
-	{
-		if ((*head)->n != aux2->n)
+		while (fast != NULL && fast->next != NULL)
 		{
-			free_listint(aux);
-			return (0);
+			fast = fast->next->next;
+			prev_slow = slow;
+			slow = slow->next;
 		}
-		*head = (*head)->next;
-		aux2 = aux2->next;
+		if (fast != NULL)
+		{
+			mid_mode = slow;
+			slow = slow->next;
+		}
+		second_half = slow;
+		prev_slow->next = NULL;
+		prev = NULL;
+		next = NULL;
+		
+		while (second_half != NULL)
+		{
+			next = second_half->next;
+			second_half->next = prev;
+			prev = second_half;
+			second_half = next;
+		}
+
+		while (*head != NULL && second_half != NULL)
+		{
+			if ((*head)->n != second_half->n)
+			{
+				is_palindrome = 0;
+				break;
+			}
+			*head = (*head)->next;
+			second_half = second_half->next;
+		}
+
+	prev = NULL;
+	while (prev != NULL)
+	{
+		next = prev->next;
+		free(prev);
+		prev = next;
 	}
-	free_listint(aux);
-	return (1);
+
+	if (mid_mode != NULL)
+	{
+		prev_slow->next = mid_mode;
+		mid_mode->next = second_half;
+	}
+	else
+	{
+		prev_slow->next = second_half;
+	}
 }
+	return is_palindrome;
+}
+
