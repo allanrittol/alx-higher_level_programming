@@ -10,6 +10,6 @@ if __name__ == "__main__":
     result_div = div(a, b)
 
     print("{} + {} = {}".format(a, b, result_add))
-    print("{} + {} = {}".format(a, b, result_sub))
-    print("{} + {} = {}".format(a, b, result_mul))
-    print("{} + {} = {}".format(a, b, result_div))
+    print("{} - {} = {}".format(a, b, result_sub))
+    print("{} * {} = {}".format(a, b, result_mul))
+    print("{} / {} = {}".format(a, b, result_div))
