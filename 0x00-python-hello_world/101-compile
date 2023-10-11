@@ -1,3 +1,16 @@
 #!/bin/bash
-python3 -m compileall $PYFILE -b
-Give feedback
+
+# Check if PYFILE is set and is a valid file
+if [ -z "\$PYFILE" ]; then
+    echo "PYFILE is not set"
+    exit 1
+elif [ ! -f "\$PYFILE" ]; then
+    echo "\$PYFILE does not exist"
+    exit 1
+fi
+
+# Compile the python file
+python -m compileall -b \$PYFILE
+
+# Rename the output file to PYFILEc
+mv \${PYFILE}c \${PYFILE}c
