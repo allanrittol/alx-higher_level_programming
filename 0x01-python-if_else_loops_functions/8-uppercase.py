@@ -4,8 +4,8 @@ def uppercase(str):
     result = ''
     for char in str:
         if 'a' <= char <= 'z':
-            result += chr(ord(char) - 32)
+            print(char(ord(char)) - 32), end='')
         else:
-            result += char
-    print("Original String: {}".format(str))
-    print("Uppercase String: {}".format(result))
+            print(char, end='')
+    print('\n')
+    uppercase("hello world")
