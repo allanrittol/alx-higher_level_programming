@@ -43,7 +43,7 @@ class Square:
         """
         This is a method that calculates and returns the current square area.
         """
-        return self.__size ** 2
+        return (self.__size * self.__size)
 
     def my_print(self):
         """
@@ -51,7 +51,8 @@ class Square:
         If size is equal to 0, print an empty line.
         """
         if self.__size == 0:
-            print()
+            print("")
         else:
-            for _ in range(self.__size):
-                print("#" * self.__size)
+            for i in range(0, self.__size):
+                [print("#", end="") for j in range(self.__size)]
+                print("")
