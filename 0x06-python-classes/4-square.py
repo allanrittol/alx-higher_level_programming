@@ -1,16 +1,18 @@
 #!/usr/bin/python3
 
-"""Define a class Square."""
-
 
 class Square:
-    """Represent a Square."""
+    """This is a class that defines a Square."""
 
     def __init__(self, size=0):
-        """Initialize a new square.
+        """This is the constructor method for Square class.
+        The size must be an integer, otherwise
 
-        Args:
-            size (int): The size of the new square."""
+        Raise: A TypeError exception with the message size
+        must be an integer.
+        If size is less than 0, raise a ValueError exception
+        with the message size must be >= 0.
+        """
         self.size = size
 
         @property
@@ -24,6 +26,9 @@ class Square:
                 raise TypeError("size must be an integer")
             elif value < 0:
                 raise ValueError("size must be >= 0")
-            self.__size = value
+            else:
+                self.__size = value
 
         def area(self):
+
+            return self.__size ** 2
