@@ -7,9 +7,7 @@ class Rectangle:
     """Representation of Class rectangle"""
 
     def __init__(self, width=0, height=0):
-        """
-        Initialize the Rectangle with optional width and height
-        """
+        """Initialize the Rectangle with optional width and height"""
         self.width = width
         self.height = height
 
@@ -20,11 +18,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """
-        sets the width of the Rectangle,
-        Raise TypeError if width is not an integer,
-        Raise Valueerror if width is less than 0
-        """
+        """setter for the prvate instance attribute width,"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value < 0:
