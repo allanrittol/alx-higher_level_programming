@@ -1,13 +1,10 @@
 #!/usr/bin/python3
 
-"""Defines a class"""
+"""Defines a class Rectangle"""
 
 
 class Rectangle:
-    """
-    Class represents a rectangle, and has a private instance attribute width
-    and height, with property setters and getters.
-    """
+    """Representation of Class rectangle"""
 
     def __init__(self, width=0, height=0):
         """
