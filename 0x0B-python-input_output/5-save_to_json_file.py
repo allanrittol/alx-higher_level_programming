@@ -7,10 +7,10 @@ import json
 
 def save_to_join_file(my_obj, filename):
     """
-    Writes an object to a text file using JSON representation.
+    Serialize and save an object to a text file using JSON representation.
 
     Parameters:
-        my_obj: The object to be serialized and saved to the file.
+        my_obj (object): The object to be serialized.
         filename (str): The name of the file to save the JSON representation.
 
     Note:
@@ -19,7 +19,7 @@ def save_to_join_file(my_obj, filename):
         file permissions.
 
     Example:
-        save_to_json_file({"name": "John", "age": 30}, "output.json")
+        save_to_json_file([1, 2, 3], "output.json")
     """
     with open(filename, 'w', encoding="utf-8") as file:
         json.dump(my_obj, file)
