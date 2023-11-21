@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 """The base class Module"""
+import json
+import csv
+import turtle
 
 
 class Base:
@@ -14,12 +17,3 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-       t.forward(i.height)
-            t.left(90)
-            t.forward(i.width)
-            t.left(90)
-            t.forward(i.height)
-            t.left(90)
-            t.end_fill()
-
-        time.sleep(5)
