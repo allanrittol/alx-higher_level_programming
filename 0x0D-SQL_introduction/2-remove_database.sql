@@ -1,0 +1,1 @@
+-- A sript that deletes a record
