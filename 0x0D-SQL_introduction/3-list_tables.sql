@@ -1,2 +1,4 @@
 -- A script that lists all the tables of a databases
-mysql -u root -p mysql -e "SHOW TABLES;"
+SELECT *
+FROM mysql
+WHERE table_schema = mysql
